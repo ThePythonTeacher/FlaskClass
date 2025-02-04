@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeeksforGeeks Example</title>
+    <style>
+        .intro-text {
+            font-size: 18px;
+        }
+        .output {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>GeeksforGeeks</h2>
+    <!-- Using class selectors for styling -->
+    <p class="intro-text">
+        The Python Teacher
+    </p>
+    <p>
+        This example illustrates the use of class and ID selectors along with an event handler.
+    </p>
+
+    <!-- Added a button for event handling -->
+    <button id="actionButton">Get Introduction</button>
+
+    <p class="output" id="demo"></p>
+
+    <script>
+        // Event handler for button click
+        document.getElementById("actionButton").addEventListener("click", function() {
+            // Find the element by class selector
+            const element = document.querySelector(".intro-text");
+            // Update the demo paragraph content with the intro text
+            document.getElementById("demo").innerHTML =
+                "This class is : " + element.innerHTML;
+        });
+    </script>
+</body>
+</html>

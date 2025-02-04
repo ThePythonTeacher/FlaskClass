@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+
+    <script></script>
+</head>
+<body>
+    <h2>Submit Form</h2>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="responseMessage"></p>
+
+<script>
+     document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        fetch("http://127.0.0.1:5000/submit", {  // Change IP if needed
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name: name, email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                window.location.href = `success.html?name=${encodeURIComponent(name)}`;  // Redirect with name
+            } else {
+                document.getElementById("responseMessage").innerText = data.message;
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

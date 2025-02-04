@@ -1,0 +1,32 @@
+
+getElementById(id)
+
+Selects an element by its ID.
+
+getElementsByClassName(class)
+
+Selects all elements with a given class.
+
+querySelector(selector)
+
+Selects the first matching element.
+
+querySelectorAll(selector)
+
+Selects all matching elements.
+
+createElement(tag)
+
+Creates a new HTML element.
+
+appendChild(node)
+
+Adds a child node to an element.
+
+remove()
+
+Removes an element from the DOM.
+
+addEventListener(event, fn)
+
+Attaches an event handler to an element.

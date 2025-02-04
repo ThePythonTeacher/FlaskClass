@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition Example</title>
+</head>
+<body>
+    <label for="val1">Enter Value 1: </label>
+    <input type="number" id="val1" />
+    <br /><br />
+
+    <label for="val2">Enter Value 2: </label>
+    <input type="number" class="val2" />
+    <br /><br />
+
+    <button onclick="calculateSum()">Add Values</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+            const value1 = parseFloat(document.getElementById("val1").value);
+            const value2 = parseFloat(document.getElementsByClassName("val2")[0].value);
+            const sum = value1 + value2;
+
+            console.log("Sum: " + sum);
+
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = `Addition Result: ${sum}`;
+            resultElement.style.color = "red";
+        }
+    </script>
+</body>
+</html>

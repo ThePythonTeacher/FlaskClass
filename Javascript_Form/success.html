@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+</head>
+<body>
+    <h2>Form Submitted Successfully!</h2>
+    <p id="welcomeMessage"></p>
+    <a href="Form.html">Go Back</a>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the user's name and display it
+        let userName = getQueryParam("name");
+        if (userName) {
+            document.getElementById("welcomeMessage").innerText = `Thank you, ${userName}, for submitting your details!`;
+        } else {
+            document.getElementById("welcomeMessage").innerText = "Thank you for submitting your details!";
+        }
+    </script>
+</body>
+</html>
