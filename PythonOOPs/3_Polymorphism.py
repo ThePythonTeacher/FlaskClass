@@ -7,11 +7,11 @@ class Office(Home):
     def role(self):
         return  "as a TL"
 
-class TutionCenter(Office):
+class TutionCenter(Home):
     def role(self):
         return "as a teacher "
 
-class Bala(TutionCenter):
+class Bala(Home):
     def role(self):
         return f"{TutionCenter.role(self)}, {Office.role(self)}, {super().role()}"
 
